@@ -9,8 +9,18 @@ from sklearn.metrics import accuracy_score # for measuring accuracy
 import scipy.io as sio # for loading data
 
 ## Load a simple spectral dataset
+#  Bootstrap: run multiple times algorithm and get different outcomes
 original = sio.loadmat("../../data/micromass/data.mat")
+# this is just some random data
 
+print(original)
+
+plt.figure(3)
+plt.plot(original['X'], '.') # 
+plt.show()
+plt.figure(4)
+plt.plot(original['Y'], '.') # -1 0 1
+plt.show()
 
 ## split data into training and test sets
 n_train = 128 # number of training points
@@ -40,6 +50,16 @@ for weight in weights:
               test_accuracy[weight][-1])
 
 plt.figure(1)
+<<<<<<< HEAD
+plt.plot(n_neighbors, train_accuracy['uniform'], label='train_accuracy')
+plt.plot(n_neighbors, test_accuracy['uniform'], label='test_accuracy')
+plt.legend()
+plt.title("Uniform")
+plt.figure(2)
+plt.plot(n_neighbors, train_accuracy['distance'], label='train_accuracy')
+plt.plot(n_neighbors, test_accuracy['distance'], label='test_accuracy')
+plt.legend()
+=======
 plt.plot(n_neighbors, train_accuracy['uniform'])
 plt.plot(n_neighbors, test_accuracy['uniform'])
 plt.xlabel("Number of neighbours")
@@ -50,6 +70,7 @@ plt.plot(n_neighbors, train_accuracy['distance'])
 plt.plot(n_neighbors, test_accuracy['distance'])
 plt.xlabel("Number of neighbours")
 plt.ylabel("Accuracy")
+>>>>>>> 7b3fe928d82ad687780b4ea5af5e1718425b3104
 plt.title("Distance")
 
 plt.show()
