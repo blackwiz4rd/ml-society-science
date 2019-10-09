@@ -21,7 +21,8 @@ p_flip = 1 / (1 + numpy.exp(epsilon))
 dp_data = numpy.zeros(n_people)
 for i in range(n_people):
     if (numpy.random.binomial(
-    dp_data[i] 
+    dp_data[i]
+
 # Calculate the average
 local_average = numpy.average(corrupted_data)
 print("The average salary computed with local DP + Laplace is ", local_average)
@@ -36,5 +37,3 @@ central_noise = numpy.random.laplace(scale=central_sensitivity / epsilon, size=1
 # Calculate the average
 central_average = numpy.average(data + central_noise)
 print("The average salary computed with central DP + Laplace is ", central_average)
-
-
