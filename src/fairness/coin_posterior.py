@@ -18,9 +18,4 @@ for i in range(2):
 
 posterior = likelihood * prior
 posterior /= sum(posterior)
-print(posterior)
-
-
-
-
-
+print("posterior", posterior)
